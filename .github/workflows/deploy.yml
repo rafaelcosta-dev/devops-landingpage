@@ -1,8 +1,9 @@
-name: Deploy com Docker
+name: Deploy to Docker Hub
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      - main
 
 jobs:
   build-and-push:
@@ -24,3 +25,9 @@ jobs:
           context: .
           push: true
           tags: rafadev05/devops-landingpage:latest
+          
+      - name: Confirmar imagem no Docker Hub
+        run: |
+          docker pull rafadev05/devops-landingpage:latest
+          echo "Imagem confirmada!"
+
