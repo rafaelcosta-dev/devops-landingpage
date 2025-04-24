@@ -24,7 +24,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: rafadev05/devops-landingpage:latest
+          tags: devrafa05/devops-landingpage:latest
           
       - name: Confirmar imagem no Docker Hub
         run: |
