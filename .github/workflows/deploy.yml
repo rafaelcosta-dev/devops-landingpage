@@ -1,0 +1,25 @@
+name: Deploy Docker image to DockerHub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}  # Certifique-se de que o nome do secret está correto
+          password: ${{ secrets.DOCKER_PASSWORD }}  # Certifique-se de que o nome do secret está correto
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: devrafa05/devops-landingpage:latest
