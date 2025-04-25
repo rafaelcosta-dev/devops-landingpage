@@ -1,18 +1,10 @@
-
-# Imagem base para páginas estáticas
 FROM nginx:alpine
 
-# Remove a página padrão do Nginx
+# Remove os arquivos padrão do NGINX
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copia os arquivos da landing page para o Nginx
+# Copia os arquivos do seu projeto para a pasta do NGINX
 COPY . /usr/share/nginx/html
 
-# Expõe a porta padrão do Nginx
+# Expõe a porta 80 (opcional para debug local)
 EXPOSE 80
-
-# Inicia o Nginx
-CMD ["nginx", "-g", "daemon off;"]
-
-
-
