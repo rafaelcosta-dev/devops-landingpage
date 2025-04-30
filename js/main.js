@@ -21,7 +21,7 @@ const projetos = [
         <div class="card-body">
           <h5 class="card-title">${proj.titulo}</h5>
           <p class="card-text">${proj.descricao}</p>
-          <a href="${proj.link}" target="_blank" class="btn btn-primary">Ver no GitHub</a>
+          <a href="${proj.link}" target="_blank" class="btn btn-dark">Ver no GitHub</a>
         </div>
       </div>
     `;
